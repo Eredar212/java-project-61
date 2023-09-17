@@ -8,3 +8,4 @@ Gameplay demo records:
 * [Game "Calc"](https://asciinema.org/a/608436)
 * [Game "GCD"](https://asciinema.org/a/608455)
 * [Game "Progression"](https://asciinema.org/a/608461)
+* [Game "Prime"](https://asciinema.org/a/608470)
