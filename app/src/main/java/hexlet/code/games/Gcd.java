@@ -27,8 +27,8 @@ public class Gcd implements GameFlow {
 
     @Override
     public void reGen() {
-        int randomNumber1 = (int) (Math.random() * highRangeToRandom);
-        int randomNumber2 = (int) (Math.random() * highRangeToRandom);
+        int randomNumber1 = (int) (Math.random() * highRangeToRandom) + 1;
+        int randomNumber2 = (int) (Math.random() * highRangeToRandom) + 1;
         this.question = randomNumber1 + " " + randomNumber2;
         this.answer = String.valueOf(getGcd(randomNumber1, randomNumber2));
     }
