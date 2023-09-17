@@ -10,6 +10,7 @@ public class App {
         System.out.println("3 - Calc");
         System.out.println("4 - GCD");
         System.out.println("5 - Progression");
+        System.out.println("6 - Prime");
         System.out.println("0 - Exit");
         Scanner scanner = new Scanner(System.in);
         int gameNumber = scanner.nextInt();
@@ -20,12 +21,8 @@ public class App {
         }
         String playerName = Cli.welcome(scanner);
         //scanner.close();
-
-        String resultOfGame = Engine.startGame(scanner, gameNumber);
-        if (resultOfGame == "win") {
-            System.out.println("Congratulations, " + playerName + "!");
-        } else {
-            System.out.println("Let's try again, " + playerName + "!");
+        if (gameNumber > 1) {
+            Engine.startGame(scanner, gameNumber, playerName);
         }
         scanner.close();
     }
