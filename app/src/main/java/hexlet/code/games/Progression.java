@@ -6,9 +6,9 @@ public final class Progression implements GameFlow {
     private String rules = "What number is missing in the progression?";
     private String question;
     private String answer;
-    private final int maxStep = 5;
-    private final int progressionLength = 10;
-    private final int maxProgressionStartNumber = 50;
+    static final int MAX_STEP = 5;
+    static final int PROGRESSION_LENGTH = 10;
+    static final int MAX_PROGR_START_NUMBER = 50;
     public Progression() {
         reGen();
     }
@@ -30,17 +30,17 @@ public final class Progression implements GameFlow {
     @Override
     public void reGen() {
         this.question = "";
-        int progressionStep = (int) (Math.random() * maxStep) + 1;
-        int indexOfMissingNumber = (int) (Math.random() * progressionLength);
-        int progressionNumber = (int) (Math.random() * maxProgressionStartNumber);
-        for (int i = 0; i < progressionLength; i++) {
+        int progressionStep = (int) (Math.random() * MAX_STEP) + 1;
+        int indexOfMissingNumber = (int) (Math.random() * PROGRESSION_LENGTH);
+        int progressionNumber = (int) (Math.random() * MAX_PROGR_START_NUMBER);
+        for (int i = 0; i < PROGRESSION_LENGTH; i++) {
             progressionNumber += progressionStep;
             if (i == indexOfMissingNumber) {
-                this.question += ".." + (i == progressionLength - 1 ? "" : " ");
+                this.question += ".." + (i == PROGRESSION_LENGTH - 1 ? "" : " ");
                 this.answer = String.valueOf(progressionNumber);
                 continue;
             }
-            this.question += progressionNumber + (i == progressionLength - 1 ? "" : " ");
+            this.question += progressionNumber + (i == PROGRESSION_LENGTH - 1 ? "" : " ");
         }
     }
 }

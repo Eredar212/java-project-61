@@ -6,7 +6,7 @@ public final class Gcd implements GameFlow {
     private String rules = "Find the greatest common divisor of given numbers.";
     private String question;
     private String answer;
-    final private int highRangeToRandom = 50;
+    static final int HIGHER_RANGE_RANDOM_GCD = 50; //максимальное случайноe число
     public Gcd() {
         reGen();
     }
@@ -27,8 +27,8 @@ public final class Gcd implements GameFlow {
 
     @Override
     public void reGen() {
-        int randomNumber1 = (int) (Math.random() * highRangeToRandom) + 1;
-        int randomNumber2 = (int) (Math.random() * highRangeToRandom) + 1;
+        int randomNumber1 = (int) (Math.random() * HIGHER_RANGE_RANDOM_GCD) + 1;
+        int randomNumber2 = (int) (Math.random() * HIGHER_RANGE_RANDOM_GCD) + 1;
         this.question = randomNumber1 + " " + randomNumber2;
         this.answer = String.valueOf(getGcd(randomNumber1, randomNumber2));
     }

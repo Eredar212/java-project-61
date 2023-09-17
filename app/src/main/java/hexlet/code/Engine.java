@@ -10,30 +10,29 @@ import hexlet.code.interfaces.GameFlow;
 import java.util.Scanner;
 
 public class Engine {
-    static final int rightAnswersToWin = 3;
-    static final int gameEven = 2;
-    static final int gameCalc = 3;
-    static final int gameGCD = 4;
-    static final int gameProgression = 5;
-    static final int gamePrime = 6;
+    static final int RIGHT_ANSWER_TO_WIN = 3;
+    static final int GAME_EVEN = 2;
+    static final int GAME_CALC = 3;
+    static final int GAME_GCD = 4;
+    static final int GAME_PROGRESSION = 5;
+    static final int GAME_PRIME = 6;
     public static void startGame(Scanner scanner, int gameNumber, String playerName) {
-        //счетчик правильных ответов
-        int rightAnswersInRow = 0;
+        int rightAnswersInRow = 0; //счетчик правильных ответов
         GameFlow game;
         switch (gameNumber) {
-            case gameEven:
+            case GAME_EVEN:
                 game = new Even();
                 break;
-            case gameCalc:
+            case GAME_CALC:
                 game = new Calc();
                 break;
-            case gameGCD:
+            case GAME_GCD:
                 game = new Gcd();
                 break;
-            case gameProgression:
+            case GAME_PROGRESSION:
                 game = new Progression();
                 break;
-            case gamePrime:
+            case GAME_PRIME:
                 game = new Prime();
                 break;
             default:
@@ -41,7 +40,7 @@ public class Engine {
                 return;
         }
         System.out.println(game.getRules());
-        while (rightAnswersInRow < rightAnswersToWin) {
+        while (rightAnswersInRow < RIGHT_ANSWER_TO_WIN) {
             System.out.println("Question: " + game.getQuestion());
             System.out.print("Your answer: ");
             String answer = scanner.next();

@@ -6,7 +6,7 @@ public final class Even implements GameFlow {
     private String rules = "Answer 'yes' if the number is even, otherwise answer 'no'.";
     private String question;
     private String answer;
-    final private int highRangeToRandom = 100;
+    static final int HIGH_RANGE_RANDOM_EVEN = 100; //максимальное случайное число
     public Even() {
         reGen();
     }
@@ -26,7 +26,7 @@ public final class Even implements GameFlow {
 
     @Override
     public void reGen() {
-        int randomNumber = (int) (Math.random() * highRangeToRandom);
+        int randomNumber = (int) (Math.random() * HIGH_RANGE_RANDOM_EVEN);
         this.answer = randomNumber % 2 == 0 ? "yes" : "no";
         this.question = String.valueOf(randomNumber);
     }

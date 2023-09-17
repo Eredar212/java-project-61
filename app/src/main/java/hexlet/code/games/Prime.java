@@ -6,7 +6,7 @@ public final class Prime implements GameFlow {
     private String rules = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     private String question;
     private String answer;
-    private int highRangeToRandom = 100;
+    static final int HIGH_RANGE_RANDOM_PRIME = 100;
     public Prime() {
         reGen();
     }
@@ -27,7 +27,7 @@ public final class Prime implements GameFlow {
 
     @Override
     public void reGen() {
-        int number = (int) (Math.random() * highRangeToRandom);
+        int number = (int) (Math.random() * HIGH_RANGE_RANDOM_PRIME);
         this.question = String.valueOf(number);
         this.answer = "yes";
         for (int i = 2; i < number / 2; i++) {

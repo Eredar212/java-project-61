@@ -6,8 +6,8 @@ public final class Calc implements GameFlow {
     private String rules = "What is the result of the expression?";;
     private String question;
     private String answer;
-    final private int highRangeToRandom = 10;
-    private String ops = "+-*";
+    static final int HIGH_RANGE_RANDOM_CALC = 10; //максимальное случайное число
+    static String ops = "+-*";
     public Calc() {
         reGen();
     }
@@ -27,8 +27,8 @@ public final class Calc implements GameFlow {
 
     @Override
     public void reGen() {
-        int randomNumber1 = (int) (Math.random() * highRangeToRandom);
-        int randomNumber2 = (int) (Math.random() * highRangeToRandom);
+        int randomNumber1 = (int) (Math.random() * HIGH_RANGE_RANDOM_CALC);
+        int randomNumber2 = (int) (Math.random() * HIGH_RANGE_RANDOM_CALC);
         char operation = ops.charAt((int) (Math.random() * ops.length()));
         switch (operation) {
             case '+':
@@ -43,6 +43,6 @@ public final class Calc implements GameFlow {
             default:
                 break;
         }
-        this.question = String.valueOf(randomNumber1) + " " + operation + " " + randomNumber2;
+        this.question = randomNumber1 + " " + operation + " " + randomNumber2;
     }
 }
