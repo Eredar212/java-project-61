@@ -3,7 +3,7 @@ package hexlet.code.games;
 import hexlet.code.interfaces.GameFlow;
 
 public class Even implements GameFlow {
-    private String rules = "Answer 'yes' if the number is even, otherwise answer 'no'";
+    private String rules = "Answer 'yes' if the number is even, otherwise answer 'no'.";
     private String question;
     private String answer;
     private int highRangeToRandom = 100;
