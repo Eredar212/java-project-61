@@ -7,3 +7,4 @@ Gameplay demo records:
 * [Game "Even"](https://asciinema.org/a/608435)
 * [Game "Calc"](https://asciinema.org/a/608436)
 * [Game "GCD"](https://asciinema.org/a/608455)
+* [Game "Progression"](https://asciinema.org/a/608461)
