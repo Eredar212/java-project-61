@@ -2,11 +2,11 @@ package hexlet.code.games;
 
 import hexlet.code.interfaces.GameFlow;
 
-public class Even implements GameFlow {
+public final class Even implements GameFlow {
     private String rules = "Answer 'yes' if the number is even, otherwise answer 'no'.";
     private String question;
     private String answer;
-    private int highRangeToRandom = 100;
+    final private int highRangeToRandom = 100;
     public Even() {
         reGen();
     }

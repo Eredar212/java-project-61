@@ -10,24 +10,30 @@ import hexlet.code.interfaces.GameFlow;
 import java.util.Scanner;
 
 public class Engine {
+    static final int rightAnswersToWin = 3;
+    static final int gameEven = 2;
+    static final int gameCalc = 3;
+    static final int gameGCD = 4;
+    static final int gameProgression = 5;
+    static final int gamePrime = 6;
     public static void startGame(Scanner scanner, int gameNumber, String playerName) {
+        //счетчик правильных ответов
         int rightAnswersInRow = 0;
-        int rightAnswersToWin = 3;
         GameFlow game;
         switch (gameNumber) {
-            case 2:
+            case gameEven:
                 game = new Even();
                 break;
-            case 3:
+            case gameCalc:
                 game = new Calc();
                 break;
-            case 4:
+            case gameGCD:
                 game = new Gcd();
                 break;
-            case 5:
+            case gameProgression:
                 game = new Progression();
                 break;
-            case 6:
+            case gamePrime:
                 game = new Prime();
                 break;
             default:

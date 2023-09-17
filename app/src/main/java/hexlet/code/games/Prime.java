@@ -2,7 +2,7 @@ package hexlet.code.games;
 
 import hexlet.code.interfaces.GameFlow;
 
-public class Prime implements GameFlow {
+public final class Prime implements GameFlow {
     private String rules = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     private String question;
     private String answer;

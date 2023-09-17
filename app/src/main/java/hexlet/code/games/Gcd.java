@@ -2,11 +2,11 @@ package hexlet.code.games;
 
 import hexlet.code.interfaces.GameFlow;
 
-public class Gcd implements GameFlow {
+public final class Gcd implements GameFlow {
     private String rules = "Find the greatest common divisor of given numbers.";
     private String question;
     private String answer;
-    private int highRangeToRandom = 50;
+    final private int highRangeToRandom = 50;
     public Gcd() {
         reGen();
     }

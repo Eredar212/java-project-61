@@ -2,10 +2,13 @@ package hexlet.code.games;
 
 import hexlet.code.interfaces.GameFlow;
 
-public class Progression implements GameFlow {
+public final class Progression implements GameFlow {
     private String rules = "What number is missing in the progression?";
     private String question;
     private String answer;
+    private final int maxStep = 5;
+    private final int progressionLength = 10;
+    private final int maxProgressionStartNumber = 50;
     public Progression() {
         reGen();
     }
@@ -27,10 +30,9 @@ public class Progression implements GameFlow {
     @Override
     public void reGen() {
         this.question = "";
-        int progressionStep = (int) (Math.random() * 5) + 1;
-        int progressionLength = 10;
+        int progressionStep = (int) (Math.random() * maxStep) + 1;
         int indexOfMissingNumber = (int) (Math.random() * progressionLength);
-        int progressionNumber = (int) (Math.random() * 50);
+        int progressionNumber = (int) (Math.random() * maxProgressionStartNumber);
         for (int i = 0; i < progressionLength; i++) {
             progressionNumber += progressionStep;
             if (i == indexOfMissingNumber) {
