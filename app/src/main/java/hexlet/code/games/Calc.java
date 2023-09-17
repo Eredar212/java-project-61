@@ -3,7 +3,7 @@ package hexlet.code.games;
 import hexlet.code.interfaces.GameFlow;
 
 public final class Calc implements GameFlow {
-    private String rules = "What is the result of the expression?";;
+    private String rules = "What is the result of the expression?";
     private String question;
     private String answer;
     static final int HIGH_RANGE_RANDOM_CALC = 10; //максимальное случайное число

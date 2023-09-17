@@ -34,9 +34,9 @@ public final class Gcd implements GameFlow {
     }
 
     private int getGcd(int num1, int num2) {
-        if (num1 < num2 && num2 % num1 == 0) {
+        if (num1 <= num2 && num2 % num1 == 0) {
             return num1;
-        } else if (num1 > num2 && num1 % num2 == 0) {
+        } else if (num1 >= num2 && num1 % num2 == 0) {
             return num2;
         }
         return getGcd(num2, num1 % num2);
