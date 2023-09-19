@@ -1,5 +1,6 @@
 package hexlet.code.games;
 
+import hexlet.code.Utils;
 import hexlet.code.interfaces.Game;
 
 public final class Prime implements Game {
@@ -22,14 +23,19 @@ public final class Prime implements Game {
 
     @Override
     public void reGen() {
-        int number = (int) (Math.random() * HIGH_RANGE_RANDOM_PRIME);
+        int number = Utils.getRandom(HIGH_RANGE_RANDOM_PRIME);
         this.question = String.valueOf(number);
-        this.answer = "yes";
+        this.answer = isPrime(number) ? "yes" : "no";
+    }
+    private boolean isPrime(int number) {
+        if (number == 0 || number == 1) {
+            return false;
+        }
         for (int i = 2; i < number / 2; i++) {
             if (number % i == 0) {
-                this.answer = "no";
-                break;
+                return false;
             }
         }
+        return true;
     }
 }

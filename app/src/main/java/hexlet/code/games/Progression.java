@@ -1,5 +1,6 @@
 package hexlet.code.games;
 
+import hexlet.code.Utils;
 import hexlet.code.interfaces.Game;
 
 public final class Progression implements Game {
@@ -25,9 +26,9 @@ public final class Progression implements Game {
     @Override
     public void reGen() {
         StringBuilder sb = new StringBuilder();
-        int progressionStep = (int) (Math.random() * MAX_STEP) + 1;
-        int indexOfMissingNumber = (int) (Math.random() * PROGRESSION_LENGTH);
-        int progressionNumber = (int) (Math.random() * MAX_PROGR_START_NUMBER);
+        int progressionStep = Utils.getRandom(MAX_STEP) + 1;
+        int indexOfMissingNumber = Utils.getRandom(PROGRESSION_LENGTH);
+        int progressionNumber = Utils.getRandom(MAX_PROGR_START_NUMBER);
         for (int i = 0; i < PROGRESSION_LENGTH; i++) {
             progressionNumber += progressionStep;
             if (i == indexOfMissingNumber) {

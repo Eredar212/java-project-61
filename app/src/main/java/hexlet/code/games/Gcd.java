@@ -1,5 +1,6 @@
 package hexlet.code.games;
 
+import hexlet.code.Utils;
 import hexlet.code.interfaces.Game;
 
 public final class Gcd implements Game {
@@ -22,8 +23,8 @@ public final class Gcd implements Game {
 
     @Override
     public void reGen() {
-        int randomNumber1 = (int) (Math.random() * HIGHER_RANGE_RANDOM_GCD) + 1;
-        int randomNumber2 = (int) (Math.random() * HIGHER_RANGE_RANDOM_GCD) + 1;
+        int randomNumber1 = Utils.getRandom(HIGHER_RANGE_RANDOM_GCD) + 1;
+        int randomNumber2 = Utils.getRandom(HIGHER_RANGE_RANDOM_GCD) + 1;
         this.question = randomNumber1 + " " + randomNumber2;
         this.answer = String.valueOf(getGcd(randomNumber1, randomNumber2));
     }

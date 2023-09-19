@@ -1,5 +1,6 @@
 package hexlet.code.games;
 
+import hexlet.code.Utils;
 import hexlet.code.interfaces.Game;
 
 public final class Calc implements Game {
@@ -22,10 +23,10 @@ public final class Calc implements Game {
     @Override
     public void reGen() {
         char[] ops = new char[]{'+','-','*'};
-        int randomNumber1 = (int) (Math.random() * HIGH_RANGE_RANDOM_CALC);
-        int randomNumber2 = (int) (Math.random() * HIGH_RANGE_RANDOM_CALC);
+        int randomNumber1 = Utils.getRandom(HIGH_RANGE_RANDOM_CALC);
+        int randomNumber2 = Utils.getRandom(HIGH_RANGE_RANDOM_CALC);
         char operation;
-        operation = ops[(int) (Math.random() * ops.length)];
+        operation = ops[Utils.getRandom(ops.length)];
         switch (operation) {
             case '+':
                 this.answer = String.valueOf(randomNumber1 + randomNumber2);

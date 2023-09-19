@@ -1,5 +1,6 @@
 package hexlet.code.games;
 
+import hexlet.code.Utils;
 import hexlet.code.interfaces.Game;
 
 public final class Even implements Game {
@@ -20,7 +21,7 @@ public final class Even implements Game {
 
     @Override
     public void reGen() {
-        int randomNumber = (int) (Math.random() * HIGH_RANGE_RANDOM_EVEN);
+        int randomNumber = Utils.getRandom(HIGH_RANGE_RANDOM_EVEN);
         this.answer = randomNumber % 2 == 0 ? "yes" : "no";
         this.question = String.valueOf(randomNumber);
     }
