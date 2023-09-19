@@ -46,12 +46,12 @@ public class Engine {
         }
         System.out.println(game.getRules());
         while (rightAnswersInRow < RIGHT_ANSWER_TO_WIN) {
-            System.out.println("Question: " + game.getQuestion());
+            System.out.println("Question: " + game.getData()[0]);
             System.out.print("Your answer: ");
             String answer = scanner.next();
-            if (!game.getAnswer().equals(answer)) {
+            if (!game.getData()[1].equals(answer)) {
                 System.out.println("'" + answer + "' is wrong answer ;(. "
-                        + "Correct answer was '" + game.getAnswer() + "'.");
+                        + "Correct answer was '" + game.getData()[1] + "'.");
                 System.out.println("Let's try again, " + playerName + "!");
                 return;
             } else {
