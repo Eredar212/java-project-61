@@ -14,17 +14,6 @@ public final class Even implements Game {
         return rules;
     }
 
-    @Override
-    public String getQuestion() {
-        return question;
-    }
-
-    @Override
-    public String getAnswer() {
-        return answer;
-    }
-
-    @Override
     public String[] getData() {
         return new String[]{this.question, this.answer};
     }

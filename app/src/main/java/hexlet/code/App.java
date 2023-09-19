@@ -1,6 +1,7 @@
 package hexlet.code;
 
 import hexlet.code.games.*;
+import hexlet.code.interfaces.Game;
 
 import java.util.Scanner;
 
@@ -30,9 +31,13 @@ public class App {
                 Cli.welcome();
                 break;
             case GAME_EVEN:
+                Engine.startGame(gameNumber);
             case GAME_CALC:
+                Engine.startGame(gameNumber);
             case GAME_GCD:
+                Engine.startGame(gameNumber);
             case GAME_PROGRESSION:
+                Engine.startGame(gameNumber);
             case GAME_PRIME:
                 Engine.startGame(gameNumber);
                 break;
@@ -40,6 +45,5 @@ public class App {
             default:
                 System.exit(0);
         }
-        scanner.close();
     }
 }

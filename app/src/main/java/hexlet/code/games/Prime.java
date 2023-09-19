@@ -16,16 +16,6 @@ public final class Prime implements Game {
     }
 
     @Override
-    public String getQuestion() {
-        return question;
-    }
-
-    @Override
-    public String getAnswer() {
-        return answer;
-    }
-
-    @Override
     public String[] getData() {
         return new String[]{this.question, this.answer};
     }
