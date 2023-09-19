@@ -1,66 +1,35 @@
 package hexlet.code;
 
-import hexlet.code.games.Calc;
-import hexlet.code.games.Even;
-import hexlet.code.games.Gcd;
-import hexlet.code.games.Prime;
-import hexlet.code.games.Progression;
 import hexlet.code.interfaces.Game;
 
 import java.util.Scanner;
 
 public class Engine {
     static final int RIGHT_ANSWER_TO_WIN = 3;
-    static final int GAME_EVEN = 2;
-    static final int GAME_CALC = 3;
-    static final int GAME_GCD = 4;
-    static final int GAME_PROGRESSION = 5;
-    static final int GAME_PRIME = 6;
-    public static void startGame(int gameNumber) {
+    public static void startGame(Game game) {
         int rightAnswersInRow = 0; //счетчик правильных ответов
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
         Scanner scanner = new Scanner(System.in);
         String playerName = scanner.next();
         System.out.println("Hello, " + playerName + "!");
-        Game game;
-        switch (gameNumber) {
-            case GAME_EVEN:
-                game = new Even();
-                break;
-            case GAME_CALC:
-                game = new Calc();
-                break;
-            case GAME_GCD:
-                game = new Gcd();
-                break;
-            case GAME_PROGRESSION:
-                game = new Progression();
-                break;
-            case GAME_PRIME:
-                game = new Prime();
-                break;
-            default:
-                System.out.println("Let's try again, " + playerName + "!");
-                return;
-        }
         System.out.println(game.getRules());
         while (rightAnswersInRow < RIGHT_ANSWER_TO_WIN) {
-            System.out.println("Question: " + game.getData()[0]);
+            String[] data = game.getData();
+            System.out.println("Question: " + data[0]);
             System.out.print("Your answer: ");
             String answer = scanner.next();
-            if (!game.getData()[1].equals(answer)) {
+            if (!data[1].equals(answer)) {
                 System.out.println("'" + answer + "' is wrong answer ;(. "
-                        + "Correct answer was '" + game.getData()[1] + "'.");
+                        + "Correct answer was '" + data[1] + "'.");
                 System.out.println("Let's try again, " + playerName + "!");
                 return;
             } else {
                 System.out.println("Correct!");
-                game.reGen();
                 rightAnswersInRow++;
             }
         }
         System.out.println("Congratulations, " + playerName + "!");
-        scanner.close();
+        //scanner.close();
     }
 }

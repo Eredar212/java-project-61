@@ -4,27 +4,23 @@ import hexlet.code.Utils;
 import hexlet.code.interfaces.Game;
 
 public final class Progression implements Game {
-    private String rules = "What number is missing in the progression?";
-    private String question;
-    private String answer;
     static final int MAX_STEP = 5;
     static final int PROGRESSION_LENGTH = 10;
     static final int MAX_PROGR_START_NUMBER = 50;
     public Progression() {
-        reGen();
     }
     @Override
     public String getRules() {
-        return rules;
+        return "What number is missing in the progression?";
     }
 
     @Override
     public String[] getData() {
-        return new String[]{this.question, this.answer};
+        return reGen();
     }
-
-    @Override
-    public void reGen() {
+    private String[] reGen() {
+        String question;
+        String answer = "";
         StringBuilder sb = new StringBuilder();
         int progressionStep = Utils.getRandom(MAX_STEP) + 1;
         int indexOfMissingNumber = Utils.getRandom(PROGRESSION_LENGTH);
@@ -32,12 +28,13 @@ public final class Progression implements Game {
         for (int i = 0; i < PROGRESSION_LENGTH; i++) {
             progressionNumber += progressionStep;
             if (i == indexOfMissingNumber) {
-                sb.append(".." + (i == PROGRESSION_LENGTH - 1 ? "" : " "));
-                this.answer = String.valueOf(progressionNumber);
+                sb.append("..").append(i == PROGRESSION_LENGTH - 1 ? "" : " ");
+                answer = String.valueOf(progressionNumber);
                 continue;
             }
-            sb.append(progressionNumber + (i == PROGRESSION_LENGTH - 1 ? "" : " "));
+            sb.append(progressionNumber).append(i == PROGRESSION_LENGTH - 1 ? "" : " ");
         }
-        this.question = sb.toString();
+        question = sb.toString();
+        return new String[]{question, answer};
     }
 }

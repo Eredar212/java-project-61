@@ -4,42 +4,34 @@ import hexlet.code.Utils;
 import hexlet.code.interfaces.Game;
 
 public final class Calc implements Game {
-    private String rules = "What is the result of the expression?";
-    private String question;
-    private String answer;
     static final int HIGH_RANGE_RANDOM_CALC = 10; //максимальное случайное число
     public Calc() {
-        reGen();
     }
+    @Override
     public String getRules() {
-        return rules;
+        return "What is the result of the expression?";
     }
 
     @Override
     public String[] getData() {
-        return new String[]{this.question, this.answer};
+        return reGen();
     }
 
-    @Override
-    public void reGen() {
-        char[] ops = new char[]{'+','-','*'};
+    private String[] reGen() {
+        String question;
+        String answer;
+        char[] ops = new char[]{'+', '-', '*'};
         int randomNumber1 = Utils.getRandom(HIGH_RANGE_RANDOM_CALC);
         int randomNumber2 = Utils.getRandom(HIGH_RANGE_RANDOM_CALC);
         char operation;
         operation = ops[Utils.getRandom(ops.length)];
-        switch (operation) {
-            case '+':
-                this.answer = String.valueOf(randomNumber1 + randomNumber2);
-                break;
-            case '-':
-                this.answer = String.valueOf(randomNumber1 - randomNumber2);
-                break;
-            case '*':
-                this.answer = String.valueOf(randomNumber1 * randomNumber2);
-                break;
-            default:
-                throw new IllegalStateException("Unexpected value: " + operation);
-        }
-        this.question = randomNumber1 + " " + operation + " " + randomNumber2;
+        answer = switch (operation) {
+            case '+' -> String.valueOf(randomNumber1 + randomNumber2);
+            case '-' -> String.valueOf(randomNumber1 - randomNumber2);
+            case '*' -> String.valueOf(randomNumber1 * randomNumber2);
+            default -> throw new IllegalStateException("Unexpected value: " + operation);
+        };
+        question = randomNumber1 + " " + operation + " " + randomNumber2;
+        return new String[]{question, answer};
     }
 }
