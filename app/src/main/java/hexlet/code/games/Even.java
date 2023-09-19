@@ -22,7 +22,10 @@ public final class Even implements Game {
     @Override
     public void reGen() {
         int randomNumber = Utils.getRandom(HIGH_RANGE_RANDOM_EVEN);
-        this.answer = randomNumber % 2 == 0 ? "yes" : "no";
+        this.answer = isEven(randomNumber) ? "yes" : "no";
         this.question = String.valueOf(randomNumber);
+    }
+    private boolean isEven(int number) {
+        return number % 2 == 0 ? true : false;
     }
 }
