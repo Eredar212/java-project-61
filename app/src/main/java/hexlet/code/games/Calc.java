@@ -31,10 +31,11 @@ public final class Calc implements Game {
 
     @Override
     public void reGen() {
-        String ops = "+-*";
+        char[] ops = new char[]{'+','-','*'};
         int randomNumber1 = (int) (Math.random() * HIGH_RANGE_RANDOM_CALC);
         int randomNumber2 = (int) (Math.random() * HIGH_RANGE_RANDOM_CALC);
-        char operation = ops.charAt((int) (Math.random() * ops.length()));
+        char operation;
+        operation = ops[(int) (Math.random() * ops.length)];
         switch (operation) {
             case '+':
                 this.answer = String.valueOf(randomNumber1 + randomNumber2);
@@ -46,7 +47,7 @@ public final class Calc implements Game {
                 this.answer = String.valueOf(randomNumber1 * randomNumber2);
                 break;
             default:
-                break;
+                throw new IllegalStateException("Unexpected value: " + operation);
         }
         this.question = randomNumber1 + " " + operation + " " + randomNumber2;
     }
