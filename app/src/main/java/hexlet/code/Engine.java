@@ -16,8 +16,13 @@ public class Engine {
     static final int GAME_GCD = 4;
     static final int GAME_PROGRESSION = 5;
     static final int GAME_PRIME = 6;
-    public static void startGame(Scanner scanner, int gameNumber, String playerName) {
+    public static void startGame(int gameNumber) {
         int rightAnswersInRow = 0; //счетчик правильных ответов
+        System.out.println("Welcome to the Brain Games!");
+        System.out.print("May I have your name? ");
+        Scanner scanner = new Scanner(System.in);
+        String playerName = scanner.next();
+        System.out.println("Hello, " + playerName + "!");
         GameFlow game;
         switch (gameNumber) {
             case GAME_EVEN:
@@ -56,5 +61,6 @@ public class Engine {
             }
         }
         System.out.println("Congratulations, " + playerName + "!");
+        scanner.close();
     }
 }
