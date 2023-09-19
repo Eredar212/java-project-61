@@ -1,8 +1,8 @@
 package hexlet.code.games;
 
-import hexlet.code.interfaces.GameFlow;
+import hexlet.code.interfaces.Game;
 
-public final class Gcd implements GameFlow {
+public final class Gcd implements Game {
     private String rules = "Find the greatest common divisor of given numbers.";
     private String question;
     private String answer;
@@ -23,6 +23,11 @@ public final class Gcd implements GameFlow {
     @Override
     public String getAnswer() {
         return answer;
+    }
+
+    @Override
+    public String[] getData() {
+        return new String[]{this.question, this.answer};
     }
 
     @Override

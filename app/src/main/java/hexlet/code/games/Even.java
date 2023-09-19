@@ -1,8 +1,8 @@
 package hexlet.code.games;
 
-import hexlet.code.interfaces.GameFlow;
+import hexlet.code.interfaces.Game;
 
-public final class Even implements GameFlow {
+public final class Even implements Game {
     private String rules = "Answer 'yes' if the number is even, otherwise answer 'no'.";
     private String question;
     private String answer;
@@ -22,6 +22,11 @@ public final class Even implements GameFlow {
     @Override
     public String getAnswer() {
         return answer;
+    }
+
+    @Override
+    public String[] getData() {
+        return new String[]{this.question, this.answer};
     }
 
     @Override

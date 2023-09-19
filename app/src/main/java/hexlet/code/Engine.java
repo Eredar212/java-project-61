@@ -5,7 +5,7 @@ import hexlet.code.games.Even;
 import hexlet.code.games.Gcd;
 import hexlet.code.games.Prime;
 import hexlet.code.games.Progression;
-import hexlet.code.interfaces.GameFlow;
+import hexlet.code.interfaces.Game;
 
 import java.util.Scanner;
 
@@ -23,7 +23,7 @@ public class Engine {
         Scanner scanner = new Scanner(System.in);
         String playerName = scanner.next();
         System.out.println("Hello, " + playerName + "!");
-        GameFlow game;
+        Game game;
         switch (gameNumber) {
             case GAME_EVEN:
                 game = new Even();

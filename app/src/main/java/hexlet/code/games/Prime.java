@@ -1,8 +1,8 @@
 package hexlet.code.games;
 
-import hexlet.code.interfaces.GameFlow;
+import hexlet.code.interfaces.Game;
 
-public final class Prime implements GameFlow {
+public final class Prime implements Game {
     private String rules = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     private String question;
     private String answer;
@@ -23,6 +23,11 @@ public final class Prime implements GameFlow {
     @Override
     public String getAnswer() {
         return answer;
+    }
+
+    @Override
+    public String[] getData() {
+        return new String[]{this.question, this.answer};
     }
 
     @Override
