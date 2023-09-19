@@ -34,18 +34,19 @@ public final class Progression implements Game {
 
     @Override
     public void reGen() {
-        this.question = "";
+        StringBuilder sb = new StringBuilder();
         int progressionStep = (int) (Math.random() * MAX_STEP) + 1;
         int indexOfMissingNumber = (int) (Math.random() * PROGRESSION_LENGTH);
         int progressionNumber = (int) (Math.random() * MAX_PROGR_START_NUMBER);
         for (int i = 0; i < PROGRESSION_LENGTH; i++) {
             progressionNumber += progressionStep;
             if (i == indexOfMissingNumber) {
-                this.question += ".." + (i == PROGRESSION_LENGTH - 1 ? "" : " ");
+                sb.append(".." + (i == PROGRESSION_LENGTH - 1 ? "" : " "));
                 this.answer = String.valueOf(progressionNumber);
                 continue;
             }
-            this.question += progressionNumber + (i == PROGRESSION_LENGTH - 1 ? "" : " ");
+            sb.append(progressionNumber + (i == PROGRESSION_LENGTH - 1 ? "" : " "));
         }
+        this.question = sb.toString();
     }
 }
