@@ -4,9 +4,7 @@ import hexlet.code.Utils;
 import hexlet.code.interfaces.Game;
 
 public final class Prime implements Game {
-    static final int HIGH_RANGE_RANDOM_PRIME = 100;
-    public Prime() {
-    }
+    private static final int HIGH_RANGE_RANDOM_PRIME = 100;
     @Override
     public String getRules() {
         return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
@@ -14,10 +12,6 @@ public final class Prime implements Game {
 
     @Override
     public String[] getData() {
-        return reGen();
-    }
-
-    private String[] reGen() {
         int number = Utils.getRandom(HIGH_RANGE_RANDOM_PRIME);
         String question = String.valueOf(number);
         String answer = isPrime(number) ? "yes" : "no";

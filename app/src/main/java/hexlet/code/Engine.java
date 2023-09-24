@@ -5,7 +5,9 @@ import hexlet.code.interfaces.Game;
 import java.util.Scanner;
 
 public class Engine {
-    static final int RIGHT_ANSWER_TO_WIN = 3;
+    private static final int RIGHT_ANSWER_TO_WIN = 3;
+    private static final int QUESTION = 0;
+    private static final int ANSWER = 1;
     public static void startGame(Game game) {
         int rightAnswersInRow = 0; //счетчик правильных ответов
         System.out.println("Welcome to the Brain Games!");
@@ -16,12 +18,12 @@ public class Engine {
         System.out.println(game.getRules());
         while (rightAnswersInRow < RIGHT_ANSWER_TO_WIN) {
             String[] data = game.getData();
-            System.out.println("Question: " + data[0]);
+            System.out.println("Question: " + data[QUESTION]);
             System.out.print("Your answer: ");
             String answer = scanner.next();
-            if (!data[1].equals(answer)) {
+            if (!data[ANSWER].equals(answer)) {
                 System.out.println("'" + answer + "' is wrong answer ;(. "
-                        + "Correct answer was '" + data[1] + "'.");
+                        + "Correct answer was '" + data[ANSWER] + "'.");
                 System.out.println("Let's try again, " + playerName + "!");
                 return;
             } else {

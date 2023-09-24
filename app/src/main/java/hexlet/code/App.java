@@ -29,34 +29,30 @@ public class App {
         Scanner scanner = new Scanner(System.in);
         int gameNumber = scanner.nextInt();
         System.out.println("Your choice: " + gameNumber);
-        //scanner.close();
-        Game game;
         switch (gameNumber) {
             case GAME_GREET:
                 Cli.welcome();
                 break;
             case GAME_EVEN:
-                game = new Even();
-                Engine.startGame(game);
+                Engine.startGame(new Even());
                 break;
             case GAME_CALC:
-                game = new Calc();
-                Engine.startGame(game);
+                Engine.startGame(new Calc());
                 break;
             case GAME_GCD:
-                game = new Gcd();
-                Engine.startGame(game);
+                Engine.startGame(new Gcd());
                 break;
             case GAME_PROGRESSION:
-                game = new Progression();
-                Engine.startGame(game);
+                Engine.startGame(new Progression());
                 break;
             case GAME_PRIME:
-                game = new Prime();
-                Engine.startGame(game);
+                Engine.startGame(new Prime());
                 break;
             case GAME_EXIT:
+                System.out.println("Goodbye!");
+                System.exit(0);
             default:
+                System.out.println("You chose invalid menu option. Let's try again.");
                 System.exit(0);
         }
         scanner.close();

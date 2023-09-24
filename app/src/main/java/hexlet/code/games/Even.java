@@ -4,19 +4,13 @@ import hexlet.code.Utils;
 import hexlet.code.interfaces.Game;
 
 public final class Even implements Game {
-    static final int HIGH_RANGE_RANDOM_EVEN = 100; //максимальное случайное число
-    public Even() {
-    }
+    private static final int HIGH_RANGE_RANDOM_EVEN = 100; //максимальное случайное число
     @Override
     public String getRules() {
         return "Answer 'yes' if the number is even, otherwise answer 'no'.";
     }
     @Override
     public String[] getData() {
-        return reGen();
-    }
-
-    private String[] reGen() {
         String question;
         String answer;
         int randomNumber = Utils.getRandom(HIGH_RANGE_RANDOM_EVEN);

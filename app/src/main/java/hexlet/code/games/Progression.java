@@ -4,11 +4,9 @@ import hexlet.code.Utils;
 import hexlet.code.interfaces.Game;
 
 public final class Progression implements Game {
-    static final int MAX_STEP = 5;
-    static final int PROGRESSION_LENGTH = 10;
-    static final int MAX_PROGR_START_NUMBER = 50;
-    public Progression() {
-    }
+    private static final int MAX_STEP = 5;
+    private static final int PROGRESSION_LENGTH = 10;
+    private static final int MAX_PROGR_START_NUMBER = 50;
     @Override
     public String getRules() {
         return "What number is missing in the progression?";
@@ -16,9 +14,6 @@ public final class Progression implements Game {
 
     @Override
     public String[] getData() {
-        return reGen();
-    }
-    private String[] reGen() {
         String question;
         String answer = "";
         StringBuilder sb = new StringBuilder();
@@ -28,11 +23,13 @@ public final class Progression implements Game {
         for (int i = 0; i < PROGRESSION_LENGTH; i++) {
             progressionNumber += progressionStep;
             if (i == indexOfMissingNumber) {
-                sb.append("..").append(i == PROGRESSION_LENGTH - 1 ? "" : " ");
+                sb.append("..");
                 answer = String.valueOf(progressionNumber);
                 continue;
+            } else {
+                sb.append(progressionNumber);
             }
-            sb.append(progressionNumber).append(i == PROGRESSION_LENGTH - 1 ? "" : " ");
+            sb.append(i == PROGRESSION_LENGTH - 1 ? "" : " ");
         }
         question = sb.toString();
         return new String[]{question, answer};
