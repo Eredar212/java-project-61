@@ -25,7 +25,6 @@ public final class Progression implements Game {
             if (i == indexOfMissingNumber) {
                 sb.append("..");
                 answer = String.valueOf(progressionNumber);
-                continue;
             } else {
                 sb.append(progressionNumber);
             }

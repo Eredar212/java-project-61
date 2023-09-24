@@ -5,7 +5,6 @@ import hexlet.code.games.Even;
 import hexlet.code.games.Gcd;
 import hexlet.code.games.Prime;
 import hexlet.code.games.Progression;
-import hexlet.code.interfaces.Game;
 
 import java.util.Scanner;
 
